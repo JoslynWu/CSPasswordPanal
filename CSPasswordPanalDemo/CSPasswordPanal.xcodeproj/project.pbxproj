@@ -15,7 +15,6 @@
 		9EF6FACD1E8655330095D7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EF6FACC1E8655330095D7F0 /* Assets.xcassets */; };
 		9EF6FAD01E8655330095D7F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF6FACE1E8655330095D7F0 /* LaunchScreen.storyboard */; };
 		9EF6FADB1E8655800095D7F0 /* CSPwdPanalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF6FAD81E8655800095D7F0 /* CSPwdPanalViewController.m */; };
-		9EF6FADC1E8655800095D7F0 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF6FADA1E8655800095D7F0 /* UIColor+Hex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +33,6 @@
 		9EF6FAD11E8655330095D7F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EF6FAD71E8655800095D7F0 /* CSPwdPanalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPwdPanalViewController.h; sourceTree = "<group>"; };
 		9EF6FAD81E8655800095D7F0 /* CSPwdPanalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPwdPanalViewController.m; sourceTree = "<group>"; };
-		9EF6FAD91E8655800095D7F0 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
-		9EF6FADA1E8655800095D7F0 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +79,6 @@
 				9EF6FAC01E8655330095D7F0 /* Supporting Files */,
 				9EF6FAD71E8655800095D7F0 /* CSPwdPanalViewController.h */,
 				9EF6FAD81E8655800095D7F0 /* CSPwdPanalViewController.m */,
-				9EF6FAD91E8655800095D7F0 /* UIColor+Hex.h */,
-				9EF6FADA1E8655800095D7F0 /* UIColor+Hex.m */,
 			);
 			path = CSPasswordPanal;
 			sourceTree = "<group>";
@@ -236,7 +231,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EF6FAC81E8655330095D7F0 /* ViewController.m in Sources */,
-				9EF6FADC1E8655800095D7F0 /* UIColor+Hex.m in Sources */,
 				9EF6FADB1E8655800095D7F0 /* CSPwdPanalViewController.m in Sources */,
 				9EF6FAC51E8655330095D7F0 /* AppDelegate.m in Sources */,
 				9EF6FAC21E8655330095D7F0 /* main.m in Sources */,
@@ -396,6 +390,7 @@
 				9EF6FAD61E8655330095D7F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

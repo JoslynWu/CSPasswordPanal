@@ -23,7 +23,7 @@
 
 - (IBAction)passwordPanalBtnDidClick:(UIButton *)sender {
     
-    [CSPwdPanalViewController showPasswordPanalWithEntry:self confirmComplete:^(NSString *pwd) {
+    [CSPwdPanalViewController showPasswordPanalWithEntry:self confirmComplete:^(UIButton *confirmBtn, NSString *pwd) {
         
     } forgetPwdBlock:^{
         

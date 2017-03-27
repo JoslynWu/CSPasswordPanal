@@ -7,10 +7,8 @@
 //
 
 #import "CSPwdPanalViewController.h"
-#import "UIColor+Hex.h"
 #import <Masonry.h>
 
-#define ZAI_RGBA(r,g,b,a)   [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a]
 static const NSInteger pwdNumCount = 6;
 static const CGFloat passwordTextFieldWidth = 238;
 static const CGFloat passwordTextFieldHeight = 44;
@@ -21,15 +19,18 @@ static const CGFloat passwordPanalMaxY = 391;
 @property (nonatomic, strong) UITextField *pwdTextField;
 @property (nonatomic, strong) NSMutableArray *pwdViews;
 @property (nonatomic, strong) NSString *pwdString;
-@property (nonatomic, strong) UIButton *nextStepBtn;
+@property (nonatomic, strong) UIButton *confirmBtn;
 @property (nonatomic, strong) UIView *panalView;
+
+@property (nonatomic, copy) void(^confirmBlock)(UIButton *confirmBtn, NSString *pwd);
+@property (nonatomic, copy) void(^forgetPwdBlock)();
 
 @end
 
 @implementation CSPwdPanalViewController
 
 #pragma mark  -  public
-+ (void)showPasswordPanalWithEntry:(UIViewController *)entyVc confirmComplete:(void(^)(NSString *))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock {
++ (void)showPasswordPanalWithEntry:(UIViewController *)entyVc confirmComplete:(void(^)(UIButton *confirmBtn, NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock {
     CSPwdPanalViewController *vc = [CSPwdPanalViewController new];
     vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [entyVc presentViewController:vc animated:NO completion:nil];
@@ -61,7 +62,7 @@ static const CGFloat passwordPanalMaxY = 391;
     self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
     
     UIView *panalView = [[UIView alloc] init];
-    panalView.backgroundColor = ZAI_RGBA(255, 255, 255, 0.9);
+    panalView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.9];
     panalView.layer.cornerRadius = 13;
     panalView.clipsToBounds = YES;
     self.panalView = panalView;
@@ -78,7 +79,7 @@ static const CGFloat passwordPanalMaxY = 391;
     titleLabel.text = @"输入交易密码";
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont boldSystemFontOfSize:17];
-    titleLabel.textColor = ZAI_RGBA(70, 70, 70, 1);
+    titleLabel.textColor = [UIColor colorWithRed:(70)/255.0f green:(70)/255.0f blue:(70)/255.0f alpha:1];
     [panalView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.topMargin.mas_equalTo(17.5);
@@ -110,7 +111,7 @@ static const CGFloat passwordPanalMaxY = 391;
     [forgetBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
     forgetBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     [forgetBtn addTarget:self action:@selector(forgetPwdBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [forgetBtn setTitleColor:[UIColor colorWithHexString:@"909090"] forState:UIControlStateNormal];
+    [forgetBtn setTitleColor:[self colorWithHexString:@"909090"] forState:UIControlStateNormal];
     [panalView addSubview:forgetBtn];
     [forgetBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.pwdTextField.mas_bottom).offset(10);
@@ -118,16 +119,16 @@ static const CGFloat passwordPanalMaxY = 391;
     }];
     
     UIButton *confirmBtn = [[UIButton alloc] init];
-    self.nextStepBtn = confirmBtn;
+    self.confirmBtn = confirmBtn;
     confirmBtn.titleLabel.font = [UIFont systemFontOfSize:16];
     [confirmBtn setTitle:@"确认" forState:UIControlStateNormal];
-    [confirmBtn addTarget:self action:@selector(nextStepBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [confirmBtn addTarget:self action:@selector(confirmBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [confirmBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     confirmBtn.layer.cornerRadius = 4;
     confirmBtn.clipsToBounds = YES;
     [self setNextStepBtnEnabled:NO];
-    [panalView addSubview:self.nextStepBtn];
-    [self.nextStepBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [panalView addSubview:self.confirmBtn];
+    [self.confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(panalView);
         make.bottomMargin.mas_equalTo(-20);
         make.width.mas_equalTo(238);
@@ -139,7 +140,7 @@ static const CGFloat passwordPanalMaxY = 391;
     for (NSInteger i = 1; i < pwdNumCount; i++) {
         CGFloat gridTop = 9;
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(i * gridWidth, gridTop, 1.f, passwordTextFieldHeight - gridTop * 2)];
-        lineView.backgroundColor = [UIColor colorWithHexString:@"e6e6e6"];
+        lineView.backgroundColor = [self colorWithHexString:@"e6e6e6"];
         [self.pwdTextField addSubview:lineView];
     }
     
@@ -160,7 +161,7 @@ static const CGFloat passwordPanalMaxY = 391;
     
     UIView *pwdView = [[UIView alloc] init];
     [self.pwdTextField addSubview:pwdView];
-    pwdView.backgroundColor = [UIColor colorWithHexString:@"464646"];
+    pwdView.backgroundColor = [self colorWithHexString:@"464646"];
     pwdView.layer.cornerRadius = viewW / 2;
     pwdView.layer.masksToBounds = YES;
     [pwdView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -177,11 +178,11 @@ static const CGFloat passwordPanalMaxY = 391;
 
 - (void)setNextStepBtnEnabled:(BOOL)enabled {
     if (enabled) {
-        self.nextStepBtn.backgroundColor = [UIColor colorWithHexString:@"12c286"];
-        self.nextStepBtn.enabled = YES;
+        self.confirmBtn.backgroundColor = [self colorWithHexString:@"12c286"];
+        self.confirmBtn.enabled = YES;
     } else {
-        self.nextStepBtn.backgroundColor = [UIColor colorWithHexString:@"909090"];
-        self.nextStepBtn.enabled = NO;
+        self.confirmBtn.backgroundColor = [self colorWithHexString:@"909090"];
+        self.confirmBtn.enabled = NO;
     }
 }
 
@@ -230,9 +231,9 @@ static const CGFloat passwordPanalMaxY = 391;
     [self.view endEditing:YES];
 }
 
-- (void)nextStepBtnClicked:(UIButton *)sender {
+- (void)confirmBtnClicked:(UIButton *)sender {
     if (sender.enabled) {
-        if (self.confirmBlock) { self.confirmBlock(self.pwdString); }
+        if (self.confirmBlock) { self.confirmBlock(self.confirmBtn, self.pwdString); }
         [self dismissViewControllerAnimated:NO completion:nil];
     }
 }
@@ -248,13 +249,42 @@ static const CGFloat passwordPanalMaxY = 391;
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+
+#pragma mark  -  UIColor tool
+- (NSUInteger)integerValueFromHexString:(NSString *)hex {
+    int result = 0;
+    sscanf([hex UTF8String], "%x", &result);
+    return result;
+}
+
+- (UIColor *)colorWithHexString:(NSString *)hex {
+    return [self colorWithHexString:hex alpha:1.0];
+}
+
+- (UIColor *)colorWithHexString:(NSString *)hex alpha:(CGFloat)alpha {
+    hex = [hex stringByReplacingOccurrencesOfString:@"#" withString:@""];
+    if ([hex length]!=6 && [hex length]!=3) {
+        return nil;
+    }
+    
+    NSUInteger digits = [hex length]/3;
+    CGFloat maxValue = (digits==1)?15.0:255.0;
+    
+    CGFloat red = [self integerValueFromHexString:[hex substringWithRange:NSMakeRange(0, digits)]]/maxValue;
+    CGFloat green = [self integerValueFromHexString:[hex substringWithRange:NSMakeRange(digits, digits)]]/maxValue;
+    CGFloat blue = [self integerValueFromHexString:[hex substringWithRange:NSMakeRange(2*digits, digits)]]/maxValue;
+    
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+
+
 #pragma mark  -  setter / getter
 - (UITextField *)pwdTextField{
     if (!_pwdTextField) {
         _pwdTextField = [[UITextField alloc] init];
         _pwdTextField.backgroundColor = [UIColor whiteColor];
         _pwdTextField.layer.borderWidth = 1.f;
-        _pwdTextField.layer.borderColor = [UIColor colorWithHexString:@"e6e6e6"].CGColor;
+        _pwdTextField.layer.borderColor = [self colorWithHexString:@"e6e6e6"].CGColor;
         _pwdTextField.keyboardType = UIKeyboardTypeNumberPad;
         _pwdTextField.tintColor = [UIColor whiteColor];
     }
@@ -269,4 +299,9 @@ static const CGFloat passwordPanalMaxY = 391;
 }
 
 
+
 @end
+
+
+
+
