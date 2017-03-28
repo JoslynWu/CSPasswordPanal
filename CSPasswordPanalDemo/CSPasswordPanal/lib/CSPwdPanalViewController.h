@@ -5,11 +5,14 @@
 //  Created by Joslyn Wu on 20/03/2017.
 //  Copyright © 2017 joslyn. All rights reserved.
 //
+//
+//  https://github.com/JoslynWu/CSPasswordPanal.git
 
-#import "ViewController.h"
+
+#import <UIKit/UIKit.h>
 #import <Masonry.h>
 
-@interface CSPwdPanalViewController : ViewController
+@interface CSPwdPanalViewController : UIViewController
 
 
 /**

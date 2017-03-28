@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		351593F6AC1972E2918E24CD /* libPods-CSPasswordPanal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08514D54E130A9D5E6F19398 /* libPods-CSPasswordPanal.a */; };
+		9EA9DC021E8A8083005F16A7 /* CSPwdPanalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA9DC011E8A8083005F16A7 /* CSPwdPanalViewController.m */; };
 		9EF6FAC21E8655330095D7F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF6FAC11E8655330095D7F0 /* main.m */; };
 		9EF6FAC51E8655330095D7F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF6FAC41E8655330095D7F0 /* AppDelegate.m */; };
 		9EF6FAC81E8655330095D7F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF6FAC71E8655330095D7F0 /* ViewController.m */; };
 		9EF6FACB1E8655330095D7F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF6FAC91E8655330095D7F0 /* Main.storyboard */; };
 		9EF6FACD1E8655330095D7F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EF6FACC1E8655330095D7F0 /* Assets.xcassets */; };
 		9EF6FAD01E8655330095D7F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EF6FACE1E8655330095D7F0 /* LaunchScreen.storyboard */; };
-		9EF6FADB1E8655800095D7F0 /* CSPwdPanalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF6FAD81E8655800095D7F0 /* CSPwdPanalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08514D54E130A9D5E6F19398 /* libPods-CSPasswordPanal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSPasswordPanal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C516B43125C085CBDB14400 /* Pods-CSPasswordPanal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSPasswordPanal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSPasswordPanal/Pods-CSPasswordPanal.debug.xcconfig"; sourceTree = "<group>"; };
 		98C7B8761D54B9492360651D /* Pods-CSPasswordPanal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSPasswordPanal.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSPasswordPanal/Pods-CSPasswordPanal.release.xcconfig"; sourceTree = "<group>"; };
+		9EA9DC001E8A8083005F16A7 /* CSPwdPanalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPwdPanalViewController.h; sourceTree = "<group>"; };
+		9EA9DC011E8A8083005F16A7 /* CSPwdPanalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPwdPanalViewController.m; sourceTree = "<group>"; };
 		9EF6FABD1E8655330095D7F0 /* CSPasswordPanal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSPasswordPanal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF6FAC11E8655330095D7F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9EF6FAC31E8655330095D7F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -31,8 +33,6 @@
 		9EF6FACC1E8655330095D7F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EF6FACF1E8655330095D7F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EF6FAD11E8655330095D7F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9EF6FAD71E8655800095D7F0 /* CSPwdPanalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPwdPanalViewController.h; sourceTree = "<group>"; };
-		9EF6FAD81E8655800095D7F0 /* CSPwdPanalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPwdPanalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9EA9DBFF1E8A8042005F16A7 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9EA9DC001E8A8083005F16A7 /* CSPwdPanalViewController.h */,
+				9EA9DC011E8A8083005F16A7 /* CSPwdPanalViewController.m */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		9EF6FAB41E8655320095D7F0 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +77,7 @@
 		9EF6FABF1E8655330095D7F0 /* CSPasswordPanal */ = {
 			isa = PBXGroup;
 			children = (
+				9EA9DBFF1E8A8042005F16A7 /* lib */,
 				9EF6FAC31E8655330095D7F0 /* AppDelegate.h */,
 				9EF6FAC41E8655330095D7F0 /* AppDelegate.m */,
 				9EF6FAC61E8655330095D7F0 /* ViewController.h */,
@@ -77,8 +87,6 @@
 				9EF6FACE1E8655330095D7F0 /* LaunchScreen.storyboard */,
 				9EF6FAD11E8655330095D7F0 /* Info.plist */,
 				9EF6FAC01E8655330095D7F0 /* Supporting Files */,
-				9EF6FAD71E8655800095D7F0 /* CSPwdPanalViewController.h */,
-				9EF6FAD81E8655800095D7F0 /* CSPwdPanalViewController.m */,
 			);
 			path = CSPasswordPanal;
 			sourceTree = "<group>";
@@ -231,7 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EF6FAC81E8655330095D7F0 /* ViewController.m in Sources */,
-				9EF6FADB1E8655800095D7F0 /* CSPwdPanalViewController.m in Sources */,
+				9EA9DC021E8A8083005F16A7 /* CSPwdPanalViewController.m in Sources */,
 				9EF6FAC51E8655330095D7F0 /* AppDelegate.m in Sources */,
 				9EF6FAC21E8655330095D7F0 /* main.m in Sources */,
 			);

@@ -7,13 +7,13 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://github.com/JoslynWu/CSPasswordPanal'
   s.social_media_url   = "http://www.jianshu.com/u/fb676e32e2e9"
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.2'
 
 
   s.source       = { :git => 'https://github.com/JoslynWu/CSPasswordPanal.git', :tag => s.version.to_s }
   
   s.requires_arc = true
-  s.source_files = 'CSPasswordPanal/*.{h,m}'
-  s.public_header_files = 'CSPasswordPanal/*.{h}'
+  s.source_files = 'CSPasswordPanalDemo/CSPasswordPanal/lib/*.{h,m}'
+  s.public_header_files = 'CSPasswordPanalDemo/CSPasswordPanal/lib/*.{h}'
 
 end
