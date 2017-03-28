@@ -9,7 +9,7 @@
 #import "CSPwdPanalViewController.h"
 #import <Masonry.h>
 
-static const NSInteger pwdNumCount = 6;
+static const NSInteger pwdNumCountDefault = 6;
 static const CGFloat passwordTextFieldWidth = 238;
 static const CGFloat passwordTextFieldHeight = 44;
 static const CGFloat passwordPanalMaxY = 391;
@@ -22,7 +22,7 @@ static const CGFloat passwordPanalMaxY = 391;
 @property (nonatomic, strong) UIButton *confirmBtn;
 @property (nonatomic, strong) UIView *panalView;
 
-@property (nonatomic, copy) void(^confirmBlock)(UIButton *confirmBtn, NSString *pwd);
+@property (nonatomic, copy) void(^confirmBlock)(NSString *pwd);
 @property (nonatomic, copy) void(^forgetPwdBlock)();
 
 @end
@@ -30,17 +30,20 @@ static const CGFloat passwordPanalMaxY = 391;
 @implementation CSPwdPanalViewController
 
 #pragma mark  -  public
-+ (void)showPasswordPanalWithEntry:(UIViewController *)entyVc confirmComplete:(void(^)(UIButton *confirmBtn, NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock {
-    CSPwdPanalViewController *vc = [CSPwdPanalViewController new];
-    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    [entyVc presentViewController:vc animated:NO completion:nil];
++ (void)showPwdPanalWithEntry:(UIViewController *)entyVc config:(void(^)(CSPwdPanalViewController *panal))panalBlock confirmComplete:(void(^)(NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock {
+    CSPwdPanalViewController *panal = [CSPwdPanalViewController new];
+    panal.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     
-    vc.confirmBlock = confirmBlock;
-    vc.forgetPwdBlock = forgetPwdBlock;
+    panal.confirmBlock = confirmBlock;
+    panal.forgetPwdBlock = forgetPwdBlock;
+    if(panalBlock){ panalBlock(panal); }
+    
+    [entyVc presentViewController:panal animated:NO completion:nil];
 }
 
 #pragma mark  -  lifecycle
 -(void)dealloc{
+    NSLog(@"--->%s",__func__);
     _pwdTextField.delegate = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -49,6 +52,7 @@ static const CGFloat passwordPanalMaxY = 391;
     [super viewDidLoad];
     [self addNotification];
     
+    self.pwdNumCount = (self.pwdNumCount ? self.pwdNumCount : pwdNumCountDefault);
     self.pwdString = @"";
     [self initUI];
     [self.pwdTextField becomeFirstResponder];
@@ -126,7 +130,7 @@ static const CGFloat passwordPanalMaxY = 391;
     [confirmBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     confirmBtn.layer.cornerRadius = 4;
     confirmBtn.clipsToBounds = YES;
-    [self setNextStepBtnEnabled:NO];
+    [self setConfirmBtnEnabled:NO];
     [panalView addSubview:self.confirmBtn];
     [self.confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(panalView);
@@ -136,8 +140,8 @@ static const CGFloat passwordPanalMaxY = 391;
     }];
     
     
-    CGFloat gridWidth = passwordTextFieldWidth / pwdNumCount;
-    for (NSInteger i = 1; i < pwdNumCount; i++) {
+    CGFloat gridWidth = passwordTextFieldWidth / self.pwdNumCount;
+    for (NSInteger i = 1; i < self.pwdNumCount; i++) {
         CGFloat gridTop = 9;
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(i * gridWidth, gridTop, 1.f, passwordTextFieldHeight - gridTop * 2)];
         lineView.backgroundColor = [self colorWithHexString:@"e6e6e6"];
@@ -156,7 +160,7 @@ static const CGFloat passwordPanalMaxY = 391;
 - (void)addOnePwd {
     CGFloat viewW = 6.f;
     NSInteger count = self.pwdViews.count;
-    CGFloat everyWidth = passwordTextFieldWidth / pwdNumCount;
+    CGFloat everyWidth = passwordTextFieldWidth / self.pwdNumCount;
     CGFloat left = (everyWidth - viewW) / 2 + count * everyWidth;
     
     UIView *pwdView = [[UIView alloc] init];
@@ -176,14 +180,11 @@ static const CGFloat passwordPanalMaxY = 391;
     self.pwdString = [NSString stringWithFormat:@"%@%@", self.pwdString, noSpaceText];
 }
 
-- (void)setNextStepBtnEnabled:(BOOL)enabled {
-    if (enabled) {
-        self.confirmBtn.backgroundColor = [self colorWithHexString:@"12c286"];
-        self.confirmBtn.enabled = YES;
-    } else {
-        self.confirmBtn.backgroundColor = [self colorWithHexString:@"909090"];
-        self.confirmBtn.enabled = NO;
-    }
+- (void)setConfirmBtnEnabled:(BOOL)enabled {
+    self.normolColor = (self.normolColor ? self.normolColor : [self colorWithHexString:@"909090"]);
+    self.activeColor = (self.activeColor ? self.activeColor : [self colorWithHexString:@"12c286"]);
+    self.confirmBtn.backgroundColor = (enabled ? self.activeColor : self.normolColor);
+    self.confirmBtn.enabled = enabled;
 }
 
 #pragma mark  -  listen
@@ -198,17 +199,16 @@ static const CGFloat passwordPanalMaxY = 391;
             
             self.pwdString = [self.pwdString substringToIndex:self.pwdString.length - 1];
         }
-        
     } else {
-        if (self.pwdViews.count < pwdNumCount) {
+        if (self.pwdViews.count < self.pwdNumCount) {
             [self addOnePwd];
         }
     }
     
-    if (self.pwdViews.count == pwdNumCount) {
-        [self setNextStepBtnEnabled:YES];
+    if (self.pwdViews.count == self.pwdNumCount) {
+        [self setConfirmBtnEnabled:YES];
     } else {
-        [self setNextStepBtnEnabled:NO];
+        [self setConfirmBtnEnabled:NO];
     }
     
     self.pwdTextField.text = @" "; // the space for delete
@@ -233,7 +233,7 @@ static const CGFloat passwordPanalMaxY = 391;
 
 - (void)confirmBtnClicked:(UIButton *)sender {
     if (sender.enabled) {
-        if (self.confirmBlock) { self.confirmBlock(self.confirmBtn, self.pwdString); }
+        if (self.confirmBlock) { self.confirmBlock(self.pwdString); }
         [self dismissViewControllerAnimated:NO completion:nil];
     }
 }
@@ -241,8 +241,8 @@ static const CGFloat passwordPanalMaxY = 391;
 - (void)forgetPwdBtnClicked:(UIButton *)sender {
     if (self.forgetPwdBlock) {
         self.forgetPwdBlock();
+        [self dismissViewControllerAnimated:NO completion:nil];
     }
-    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)close:(UIButton *)sender {
