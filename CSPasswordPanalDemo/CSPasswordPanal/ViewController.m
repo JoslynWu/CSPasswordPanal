@@ -18,16 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
 }
 
 - (IBAction)passwordPanalBtnDidClick:(UIButton *)sender {
     
-    [CSPwdPanalViewController showPwdPanalWithEntry:self config:^(CSPwdPanalViewController *panal) {
-        // Config this password panal
-        panal.pwdNumCount = 5;
-        panal.activeColor = [UIColor redColor];
-    } confirmComplete:^(NSString *pwd) {
+    [CSPwdPanalViewController showPwdPanalWithEntry:self config:nil confirmComplete:^(NSString *pwd) {
         NSLog(@"-->%@",pwd);
     } forgetPwdBlock:^{
         NSLog(@"-->Do find back password logic.");
