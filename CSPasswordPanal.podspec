@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/JoslynWu/CSPasswordPanal.git', :tag => s.version.to_s }
   
   s.requires_arc = true
-  s.source_files = 'CSPasswordPanalDemo/CSPasswordPanal/lib/*.{h,m}'
-  s.public_header_files = 'CSPasswordPanalDemo/CSPasswordPanal/lib/*.{h}'
+  s.source_files = 'CSPasswordPanal/*.{h,m}'
+  s.public_header_files = 'CSPasswordPanal/*.{h}'
 
 end

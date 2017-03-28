@@ -1,27 +1,26 @@
-# CSPasswordPanal
-一个优美而方便的密码验证面板。有忘记密码功能。可配置密码位数，已经做好屏幕适配。
+//
+//  CSPwdPanalViewController.h
+//  CSPasswordPanal
+//
+//  Created by Joslyn Wu on 20/03/2017.
+//  Copyright © 2017 joslyn. All rights reserved.
+//
+//
+//  https://github.com/JoslynWu/CSPasswordPanal.git
 
-## 效果图
-![](/Screenshot/CSPasswordPanal.png)
 
-## 怎么接入
-直接将下面文件（在CSPasswordPanal文件夹中）添加（拖入）项目中
+#import <UIKit/UIKit.h>
+#import <Masonry.h>
 
-```
-CSPwdPanalViewController.h
-CSPwdPanalViewController.m
-```
+@interface CSPwdPanalViewController : UIViewController
 
-## 怎么用
-调用一个类方法即可
 
-```
-+ (void)showPwdPanalWithEntry:(UIViewController *)entyVc config:(void(^)(CSPwdPanalViewController *panal))panal confirmComplete:(void(^)(NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock;
-```
-
-**Example:**
-
-```
+/**
+ 一个优美而方便的密码验证的面板。 调用这一个接口即可。
+ 使用时需导入Masonry。
+ 
+ Example:
+ 
     使用默认配置：
     [CSPwdPanalViewController showPwdPanalWithEntry:self config:nil confirmComplete:^(NSString *pwd) {
         NSLog(@"-->%@",pwd);
@@ -38,23 +37,19 @@ CSPwdPanalViewController.m
     } forgetPwdBlock:^{
         NSLog(@"-->Do find back password logic.");
     }];
-```
+
+ @param entyVc 入口的控制器。 一般传 self
+ @param panal password面板的实例，用来配置属性
+ @param confirmBlock 确认密码时的回调
+ @param forgetPwdBlock 忘记密码的回调
+ */
++ (void)showPwdPanalWithEntry:(UIViewController *)entyVc config:(void(^)(CSPwdPanalViewController *panal))panal confirmComplete:(void(^)(NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock;
 
 
-## 哪些属性可配置
-有三个可以配置属性：
-
-```
+// config 接口
 @property (nonatomic, assign) NSInteger pwdNumCount;    // 密码总位数。默认为6。
 @property (nonatomic, strong) UIColor *activeColor;     // 提交按钮激活时的颜色。默认#909090
 @property (nonatomic, strong) UIColor *normolColor;     // 提交按钮未激活时的颜色。默认#12c286
-```
 
-## 怎么Clone
-
-```
-git clone --recursive https://github.com/JoslynWu/CSPasswordPanal.git
-```
-
-
+@end
 
