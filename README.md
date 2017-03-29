@@ -45,6 +45,7 @@ CSPwdPanalViewController.m
 有三个可以配置属性：
 
 ```
+@property (nonatomic, strong) NSString *panalTitle;     // 面板title。默认文字“密码验证”
 @property (nonatomic, assign) NSInteger pwdNumCount;    // 密码总位数。默认为6。
 @property (nonatomic, strong) UIColor *activeColor;     // 提交按钮激活时的颜色。默认#909090
 @property (nonatomic, strong) UIColor *normolColor;     // 提交按钮未激活时的颜色。默认#12c286
