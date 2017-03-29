@@ -42,7 +42,6 @@ static const CGFloat passwordPanalMaxY = 391;
 
 #pragma mark  -  lifecycle
 -(void)dealloc{
-    NSLog(@"--->%s",__func__);
     _pwdTextField.delegate = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -50,15 +49,19 @@ static const CGFloat passwordPanalMaxY = 391;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNotification];
-    
-    self.pwdNumCount = (self.pwdNumCount ? self.pwdNumCount : pwdNumCountDefault);
-    self.pwdString = @"";
+    [self defaultConfig];
     [self initUI];
     [self.pwdTextField becomeFirstResponder];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
+}
+
+- (void)defaultConfig {
+    self.pwdNumCount = (self.pwdNumCount ? self.pwdNumCount : pwdNumCountDefault);
+    self.pwdString = @"";
+    self.panalTitle = (self.panalTitle.length > 0 ? self.panalTitle : @"密码验证");
 }
 
 - (void)initUI {
@@ -79,7 +82,7 @@ static const CGFloat passwordPanalMaxY = 391;
     }];
     
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = @"输入交易密码";
+    titleLabel.text = self.panalTitle;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont boldSystemFontOfSize:17];
     titleLabel.textColor = [UIColor colorWithRed:(70)/255.0f green:(70)/255.0f blue:(70)/255.0f alpha:1];
@@ -92,7 +95,7 @@ static const CGFloat passwordPanalMaxY = 391;
     }];
     
     UIButton *cancelBtn = [[UIButton alloc] init];
-    [cancelBtn setImage:[UIImage imageNamed:@"login_delete"] forState:UIControlStateNormal];
+    [cancelBtn setImage:[self defaultCancelImage] forState:UIControlStateNormal];
     [cancelBtn addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
     [panalView addSubview:cancelBtn];
     [cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -184,6 +187,26 @@ static const CGFloat passwordPanalMaxY = 391;
     self.activeColor = (self.activeColor ? self.activeColor : [self colorWithHexString:@"12c286"]);
     self.confirmBtn.backgroundColor = (enabled ? self.activeColor : self.normolColor);
     self.confirmBtn.enabled = enabled;
+}
+
+- (UIImage *)defaultCancelImage {
+    CGFloat w_h = 15;
+    static UIImage *cancelImg = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(w_h, w_h), NO, 0);
+        [[UIColor lightGrayColor] setStroke];
+        UIBezierPath *bzrPath = [UIBezierPath bezierPath];
+        bzrPath.lineWidth = 1;
+        [bzrPath moveToPoint:CGPointZero];
+        [bzrPath addLineToPoint:CGPointMake(w_h, w_h)];
+        [bzrPath moveToPoint:CGPointMake(0, w_h)];
+        [bzrPath addLineToPoint:CGPointMake(w_h, 0)];
+        [bzrPath stroke];
+        cancelImg = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    });
+    return cancelImg;
 }
 
 #pragma mark  -  listen
