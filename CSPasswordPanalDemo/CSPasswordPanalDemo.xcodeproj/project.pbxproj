@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9E96A8D41E9965CA00167C33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96A8D31E9965CA00167C33 /* main.m */; };
+		9E96A8D71E9965CA00167C33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96A8D61E9965CA00167C33 /* AppDelegate.m */; };
+		9E96A8DA1E9965CA00167C33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96A8D91E9965CA00167C33 /* ViewController.m */; };
+		9E96A8DF1E9965CA00167C33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E96A8DE1E9965CA00167C33 /* Assets.xcassets */; };
+		9E96A8E21E9965CA00167C33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E96A8E01E9965CA00167C33 /* LaunchScreen.storyboard */; };
+		9E96A8EC1E9965F500167C33 /* CSPwdPanalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96A8EB1E9965F500167C33 /* CSPwdPanalViewController.m */; };
+		9E96A8EE1E99668B00167C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E96A8ED1E99668B00167C33 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9E96A8CF1E9965CA00167C33 /* CSPasswordPanalDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSPasswordPanalDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E96A8D31E9965CA00167C33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9E96A8D51E9965CA00167C33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9E96A8D61E9965CA00167C33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9E96A8D81E9965CA00167C33 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9E96A8D91E9965CA00167C33 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9E96A8DE1E9965CA00167C33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E96A8E11E9965CA00167C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9E96A8E31E9965CA00167C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E96A8EA1E9965F500167C33 /* CSPwdPanalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPwdPanalViewController.h; sourceTree = "<group>"; };
+		9E96A8EB1E9965F500167C33 /* CSPwdPanalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPwdPanalViewController.m; sourceTree = "<group>"; };
+		9E96A8ED1E99668B00167C33 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E96A8CC1E9965CA00167C33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9E96A8C61E9965CA00167C33 = {
+			isa = PBXGroup;
+			children = (
+				9E96A8D11E9965CA00167C33 /* CSPasswordPanalDemo */,
+				9E96A8D01E9965CA00167C33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9E96A8D01E9965CA00167C33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E96A8CF1E9965CA00167C33 /* CSPasswordPanalDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E96A8D11E9965CA00167C33 /* CSPasswordPanalDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9E96A8E91E9965F500167C33 /* lib */,
+				9E96A8D51E9965CA00167C33 /* AppDelegate.h */,
+				9E96A8D61E9965CA00167C33 /* AppDelegate.m */,
+				9E96A8D81E9965CA00167C33 /* ViewController.h */,
+				9E96A8D91E9965CA00167C33 /* ViewController.m */,
+				9E96A8ED1E99668B00167C33 /* Main.storyboard */,
+				9E96A8DE1E9965CA00167C33 /* Assets.xcassets */,
+				9E96A8E01E9965CA00167C33 /* LaunchScreen.storyboard */,
+				9E96A8E31E9965CA00167C33 /* Info.plist */,
+				9E96A8D21E9965CA00167C33 /* Supporting Files */,
+			);
+			path = CSPasswordPanalDemo;
+			sourceTree = "<group>";
+		};
+		9E96A8D21E9965CA00167C33 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9E96A8D31E9965CA00167C33 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9E96A8E91E9965F500167C33 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9E96A8EA1E9965F500167C33 /* CSPwdPanalViewController.h */,
+				9E96A8EB1E9965F500167C33 /* CSPwdPanalViewController.m */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9E96A8CE1E9965CA00167C33 /* CSPasswordPanalDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E96A8E61E9965CA00167C33 /* Build configuration list for PBXNativeTarget "CSPasswordPanalDemo" */;
+			buildPhases = (
+				9E96A8CB1E9965CA00167C33 /* Sources */,
+				9E96A8CC1E9965CA00167C33 /* Frameworks */,
+				9E96A8CD1E9965CA00167C33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSPasswordPanalDemo;
+			productName = CSPasswordPanalDemo;
+			productReference = 9E96A8CF1E9965CA00167C33 /* CSPasswordPanalDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E96A8C71E9965CA00167C33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = joslyn;
+				TargetAttributes = {
+					9E96A8CE1E9965CA00167C33 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9E96A8CA1E9965CA00167C33 /* Build configuration list for PBXProject "CSPasswordPanalDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9E96A8C61E9965CA00167C33;
+			productRefGroup = 9E96A8D01E9965CA00167C33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9E96A8CE1E9965CA00167C33 /* CSPasswordPanalDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9E96A8CD1E9965CA00167C33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E96A8EE1E99668B00167C33 /* Main.storyboard in Resources */,
+				9E96A8E21E9965CA00167C33 /* LaunchScreen.storyboard in Resources */,
+				9E96A8DF1E9965CA00167C33 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E96A8CB1E9965CA00167C33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E96A8DA1E9965CA00167C33 /* ViewController.m in Sources */,
+				9E96A8EC1E9965F500167C33 /* CSPwdPanalViewController.m in Sources */,
+				9E96A8D71E9965CA00167C33 /* AppDelegate.m in Sources */,
+				9E96A8D41E9965CA00167C33 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9E96A8E01E9965CA00167C33 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E96A8E11E9965CA00167C33 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9E96A8E41E9965CA00167C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9E96A8E51E9965CA00167C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E96A8E71E9965CA00167C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CSPasswordPanalDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joslyn.CSPasswordPanalDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9E96A8E81E9965CA00167C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CSPasswordPanalDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joslyn.CSPasswordPanalDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9E96A8CA1E9965CA00167C33 /* Build configuration list for PBXProject "CSPasswordPanalDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E96A8E41E9965CA00167C33 /* Debug */,
+				9E96A8E51E9965CA00167C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E96A8E61E9965CA00167C33 /* Build configuration list for PBXNativeTarget "CSPasswordPanalDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E96A8E71E9965CA00167C33 /* Debug */,
+				9E96A8E81E9965CA00167C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9E96A8C71E9965CA00167C33 /* Project object */;
+}

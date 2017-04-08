@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CSPasswordPanal"
-  s.version      = "0.0.3"
+  s.version      = "0.0.5"
   s.summary      = "A beautiful and convenient password authentication panel."
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors      = { 'Joslyn' => 'cs_joslyn@foxmail.com' }
@@ -17,6 +17,5 @@ Pod::Spec.new do |s|
   s.public_header_files = 'CSPasswordPanal/*.{h}'
 
   s.framework  = "UIKit"
-  s.dependency "Masonry"
 
 end
