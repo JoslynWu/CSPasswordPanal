@@ -13,7 +13,6 @@
 
 /**
  一个优美而方便的密码验证的面板。 调用这一个接口即可。
- 使用时需导入Masonry。
  
  Example:
  
@@ -45,8 +44,8 @@
 // config 接口
 @property (nonatomic, strong) NSString *panalTitle;     // 面板title。默认文字“密码验证”
 @property (nonatomic, assign) NSInteger pwdNumCount;    // 密码总位数。默认为6。
-@property (nonatomic, strong) UIColor *activeColor;     // 提交按钮激活时的颜色。默认#909090
-@property (nonatomic, strong) UIColor *normolColor;     // 提交按钮未激活时的颜色。默认#12c286
+@property (nonatomic, strong) UIColor *activeColor;     // 提交按钮激活时的颜色。默认#12c286
+@property (nonatomic, strong) UIColor *normolColor;     // 提交按钮未激活时的颜色。默认#909090
 
 @end
 

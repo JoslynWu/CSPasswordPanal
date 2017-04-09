@@ -106,6 +106,8 @@ static const CGFloat passwordPanalMaxY = 391;
     pwdTextField.backgroundColor = [UIColor whiteColor];
     pwdTextField.layer.borderWidth = 1.f;
     pwdTextField.layer.borderColor = [self colorWithHexString:@"e6e6e6"].CGColor;
+    pwdTextField.layer.cornerRadius = 4;
+    pwdTextField.clipsToBounds = YES;
     pwdTextField.keyboardType = UIKeyboardTypeNumberPad;
     pwdTextField.tintColor = [UIColor whiteColor];
     [panalView addSubview:pwdTextField];
@@ -201,7 +203,7 @@ static const CGFloat passwordPanalMaxY = 391;
 
 #pragma mark  -  listen
 - (void)textFieldChanged:(NSNotification *)ntf {
-    if ([self.pwdTextField.text isEqualToString:@""]) { // delete char
+    if ([self.pwdTextField.text isEqualToString:@""]) {
         NSInteger index = self.pwdViews.count - 1;
         if (index >= 0) {
             UIView *pwdView = self.pwdViews[index];
@@ -217,13 +219,8 @@ static const CGFloat passwordPanalMaxY = 391;
         }
     }
     
-    if (self.pwdViews.count == self.pwdNumCount) {
-        [self setConfirmBtnEnabled:YES];
-    } else {
-        [self setConfirmBtnEnabled:NO];
-    }
-    
-    self.pwdTextField.text = @" "; // the space for delete
+    [self setConfirmBtnEnabled:self.pwdViews.count == self.pwdNumCount];
+    self.pwdTextField.text = @" ";
 }
 
 - (void)keyboardChange:(NSNotification *)ntf {
