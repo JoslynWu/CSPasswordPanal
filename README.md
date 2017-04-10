@@ -1,5 +1,8 @@
-# CSPasswordPanal
+# CSPasswordPanal-OC
 一个优美而方便的密码验证面板。有忘记密码功能。可配置密码位数，已经做好屏幕适配。
+本版本为[Objective-C版](https://github.com/JoslynWu/CSPasswordPanal.git)。
+
+## Swift版入口：[CSPasswordPanal-Swift](https://github.com/JoslynWu/CSPasswordPanal-Swift.git)
 
 ## 效果图
 ![](/Screenshot/CSPasswordPanal.png)
@@ -42,7 +45,6 @@ CSPwdPanalViewController.m
 
 
 ## 哪些属性可配置
-有三个可以配置属性：
 
 ```
 @property (nonatomic, strong) NSString *panalTitle;     // 面板title。默认文字“密码验证”
@@ -51,11 +53,6 @@ CSPwdPanalViewController.m
 @property (nonatomic, strong) UIColor *normolColor;     // 提交按钮未激活时的颜色。默认#12c286
 ```
 
-## 怎么Clone
-
-```
-git clone --recursive https://github.com/JoslynWu/CSPasswordPanal.git
-```
 
 
 
