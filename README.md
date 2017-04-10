@@ -42,7 +42,6 @@ CSPwdPanalViewController.m
 
 
 ## 哪些属性可配置
-有三个可以配置属性：
 
 ```
 @property (nonatomic, strong) NSString *panalTitle;     // 面板title。默认文字“密码验证”
