@@ -17,14 +17,14 @@
  Example:
  
     使用默认配置：
-    [CSPwdPanalViewController showPwdPanalWithEntry:self config:nil confirmComplete:^(NSString *pwd) {
+    [CSPasswordPanal showPwdPanalWithEntry:self config:nil confirmComplete:^(NSString *pwd) {
         NSLog(@"-->%@",pwd);
     } forgetPwdBlock:^{
         NSLog(@"-->Do find back password logic.");
     }];
  
     自定义配置：
-    [CSPwdPanalViewController showPwdPanalWithEntry:self config:^(CSPwdPanalViewController *panal) {
+    [CSPasswordPanal showPwdPanalWithEntry:self config:^(CSPasswordPanal *panal) {
         // Config this password panal
         panal.pwdNumCount = 5;
     } confirmComplete:^(NSString *pwd) {

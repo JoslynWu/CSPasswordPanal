@@ -11,36 +11,36 @@
 直接将下面文件（在CSPasswordPanal文件夹中）添加（拖入）项目中
 
 ```
-CSPwdPanalViewController.h
-CSPwdPanalViewController.m
+CSPasswordPanal.h
+CSPasswordPanal.m
 ```
 
 ## 怎么用
 调用一个类方法即可
 
 ```
-+ (void)showPwdPanalWithEntry:(UIViewController *)entyVc config:(void(^)(CSPwdPanalViewController *panal))panal confirmComplete:(void(^)(NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock;
++ (void)showPwdPanalWithEntry:(UIViewController *)entyVc config:(void(^)(CSPasswordPanal *panal))panal confirmComplete:(void(^)(NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock;
 ```
 
 **Example:**
 
 ```
-    使用默认配置：
-    [CSPwdPanalViewController showPwdPanalWithEntry:self config:nil confirmComplete:^(NSString *pwd) {
-        NSLog(@"-->%@",pwd);
-    } forgetPwdBlock:^{
-        NSLog(@"-->Do find back password logic.");
-    }];
- 
-    自定义配置：
-    [CSPwdPanalViewController showPwdPanalWithEntry:self config:^(CSPwdPanalViewController *panal) {
-        // Config this password panal
-        panal.pwdNumCount = 5;
-    } confirmComplete:^(NSString *pwd) {
-        NSLog(@"-->%@",pwd);
-    } forgetPwdBlock:^{
-        NSLog(@"-->Do find back password logic.");
-    }];
+使用默认配置：
+[CSPasswordPanal showPwdPanalWithEntry:self config:nil confirmComplete:^(NSString *pwd) {
+    NSLog(@"-->%@",pwd);
+} forgetPwdBlock:^{
+    NSLog(@"-->Do find back password logic.");
+}];
+
+自定义配置：
+[CSPasswordPanal showPwdPanalWithEntry:self config:^(CSPasswordPanal *panal) {
+    // Config this password panal
+    panal.pwdNumCount = 5;
+} confirmComplete:^(NSString *pwd) {
+    NSLog(@"-->%@",pwd);
+} forgetPwdBlock:^{
+    NSLog(@"-->Do find back password logic.");
+}];
 ```
 
 
