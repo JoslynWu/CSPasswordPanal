@@ -12,7 +12,7 @@
 		9E96A8DA1E9965CA00167C33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96A8D91E9965CA00167C33 /* ViewController.m */; };
 		9E96A8DF1E9965CA00167C33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E96A8DE1E9965CA00167C33 /* Assets.xcassets */; };
 		9E96A8E21E9965CA00167C33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E96A8E01E9965CA00167C33 /* LaunchScreen.storyboard */; };
-		9E96A8EC1E9965F500167C33 /* CSPwdPanalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96A8EB1E9965F500167C33 /* CSPwdPanalViewController.m */; };
+		9E96A8EC1E9965F500167C33 /* CSPasswordPanal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E96A8EB1E9965F500167C33 /* CSPasswordPanal.m */; };
 		9E96A8EE1E99668B00167C33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E96A8ED1E99668B00167C33 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -26,8 +26,8 @@
 		9E96A8DE1E9965CA00167C33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E96A8E11E9965CA00167C33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E96A8E31E9965CA00167C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9E96A8EA1E9965F500167C33 /* CSPwdPanalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPwdPanalViewController.h; sourceTree = "<group>"; };
-		9E96A8EB1E9965F500167C33 /* CSPwdPanalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPwdPanalViewController.m; sourceTree = "<group>"; };
+		9E96A8EA1E9965F500167C33 /* CSPasswordPanal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSPasswordPanal.h; sourceTree = "<group>"; };
+		9E96A8EB1E9965F500167C33 /* CSPasswordPanal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSPasswordPanal.m; sourceTree = "<group>"; };
 		9E96A8ED1E99668B00167C33 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,8 +86,8 @@
 		9E96A8E91E9965F500167C33 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				9E96A8EA1E9965F500167C33 /* CSPwdPanalViewController.h */,
-				9E96A8EB1E9965F500167C33 /* CSPwdPanalViewController.m */,
+				9E96A8EA1E9965F500167C33 /* CSPasswordPanal.h */,
+				9E96A8EB1E9965F500167C33 /* CSPasswordPanal.m */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E96A8DA1E9965CA00167C33 /* ViewController.m in Sources */,
-				9E96A8EC1E9965F500167C33 /* CSPwdPanalViewController.m in Sources */,
+				9E96A8EC1E9965F500167C33 /* CSPasswordPanal.m in Sources */,
 				9E96A8D71E9965CA00167C33 /* AppDelegate.m in Sources */,
 				9E96A8D41E9965CA00167C33 /* main.m in Sources */,
 			);
@@ -315,6 +315,7 @@
 				9E96A8E81E9965CA00167C33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

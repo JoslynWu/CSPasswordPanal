@@ -1,19 +1,19 @@
 //
-//  CSPwdPanalViewController.m
+//  CSPasswordPanal.m
 //  CSPasswordPanal
 //
 //  Created by Joslyn Wu on 20/03/2017.
 //  Copyright © 2017 joslyn. All rights reserved.
 //
 
-#import "CSPwdPanalViewController.h"
+#import "CSPasswordPanal.h"
 
 static const NSInteger pwdNumCountDefault = 6;
 static const CGFloat pwdTextField_w = 238;
 static const CGFloat pwdTextField_h = 44;
 static const CGFloat passwordPanalMaxY = 391;
 
-@interface CSPwdPanalViewController ()
+@interface CSPasswordPanal ()
 
 @property (nonatomic, strong) UITextField *pwdTextField;
 @property (nonatomic, strong) NSMutableArray *pwdViews;
@@ -26,11 +26,11 @@ static const CGFloat passwordPanalMaxY = 391;
 
 @end
 
-@implementation CSPwdPanalViewController
+@implementation CSPasswordPanal
 
 #pragma mark  -  public
-+ (void)showPwdPanalWithEntry:(UIViewController *)entyVc config:(void(^)(CSPwdPanalViewController *panal))panalBlock confirmComplete:(void(^)(NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock {
-    CSPwdPanalViewController *panal = [CSPwdPanalViewController new];
++ (void)showPwdPanalWithEntry:(UIViewController *)entyVc config:(void(^)(CSPasswordPanal *panal))panalBlock confirmComplete:(void(^)(NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock {
+    CSPasswordPanal *panal = [CSPasswordPanal new];
     panal.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     
     panal.confirmBlock = confirmBlock;

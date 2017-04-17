@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "CSPwdPanalViewController.h"
+#import "CSPasswordPanal.h"
 
 @interface ViewController ()
 
@@ -22,7 +22,7 @@
 
 - (IBAction)passwordPanalBtnDidClick:(UIButton *)sender {
     
-    [CSPwdPanalViewController showPwdPanalWithEntry:self config:^(CSPwdPanalViewController *panal) {
+    [CSPasswordPanal showPwdPanalWithEntry:self config:^(CSPasswordPanal *panal) {
         // Config this password panal
     } confirmComplete:^(NSString *pwd) {
         NSLog(@"-->%@",pwd);

@@ -1,5 +1,5 @@
 //
-//  CSPwdPanalViewController.h
+//  CSPasswordPanal.h
 //  CSPasswordPanal
 //
 //  Copyright © 2017 joslyn. All rights reserved.
@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSPwdPanalViewController : UIViewController
+@interface CSPasswordPanal : UIViewController
 
 /**
  一个优美而方便的密码验证的面板。 调用这一个接口即可。
@@ -38,7 +38,7 @@
  @param confirmBlock 确认密码时的回调
  @param forgetPwdBlock 忘记密码的回调
  */
-+ (void)showPwdPanalWithEntry:(UIViewController *)entyVc config:(void(^)(CSPwdPanalViewController *panal))panal confirmComplete:(void(^)(NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock;
++ (void)showPwdPanalWithEntry:(UIViewController *)entyVc config:(void(^)(CSPasswordPanal *panal))panal confirmComplete:(void(^)(NSString *pwd))confirmBlock forgetPwdBlock:(void(^)())forgetPwdBlock;
 
 
 // config 接口
